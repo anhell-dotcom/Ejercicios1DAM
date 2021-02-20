@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class ejercicio_31 {
 	/**
 	 * Realiza el juego del “Craps”. Las reglas son las siguientes: Al comenzar la
-	 * partida, el jugador introduce la cantidad de dinero que quiere apostar. 
-	 * Se muestra la tirada aleatoria de dos dados. Si entre los dos dados suman 7 u
+	 * partida, el jugador introduce la cantidad de dinero que quiere apostar. Se
+	 * muestra la tirada aleatoria de dos dados. Si entre los dos dados suman 7 u
 	 * 11, el jugador gana la misma cantidad que apostó y termina la partida. Por
 	 * ej. si apostó 1000 €, gana otros 1000 € y acaba con 2000 €. Si entre los dos
 	 * dados suman 2, 3 o 12, el jugador pierde todo su dinero y termina la partida.
@@ -24,14 +24,24 @@ public class ejercicio_31 {
 		int tiradaPrimera = 0;
 		int tiradaSegunda = 0;
 		int sumaTiradas = 0;
-		boolean finPartida;
+		int comprobacionEntero = 0;
 		boolean finDelJuego;
 
 		System.out.println("Bienvenido al juego del Craps, tiraras 2 dados");
-		System.out.println("¿Que cantidad de dinero quieres apostar?");
-		dineroApuesta = Integer.parseInt(sc.nextLine());
 
-		finPartida = false;
+		// validamos que el usuario ingrese un numero entero
+		do {
+			try {
+				System.out.println("¿Que cantidad de dinero quieres apostar?");
+				dineroApuesta = Integer.parseInt(sc.nextLine());
+			} catch (Exception e) {
+				System.out.println("El numero no es valido");
+				comprobacionEntero = 1;
+				sc.nextLine();
+			}
+		} while (comprobacionEntero != 0);
+
+
 		tiradaPrimera = (int) (Math.random() * 6 + 1);
 		tiradaSegunda = (int) (Math.random() * 6 + 1);
 		sumaTiradas = tiradaPrimera + tiradaSegunda;
