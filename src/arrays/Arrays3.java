@@ -24,14 +24,15 @@ public class Arrays3 {
 		final int N_MESAS = 4;
 		final int MAX_COMENSALES = 4;
 		int[] mesas = new int[N_MESAS];
+		
 		// int[] mesas = {4,3,2,1};
 		Scanner sc = new Scanner(System.in);
 		int nPersonas = 0;
 		boolean estanSentados = false;
 
-		// Inicializo todas las mesas a 0 comensales
+		// Inicializa todas las mesas a un número aleatorio de 0 a 4 comensales
 		for (int i = 0; i < mesas.length; i++) {
-			mesas[i] = 0;
+			mesas[i] = (int)(Math.random()*5);
 		}
 		// Arrays.fill(mesas, 0); //Es lo mismo que el for de arriba
 		do {
