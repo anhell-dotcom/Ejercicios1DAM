@@ -36,28 +36,27 @@ public class MainApp {
 		listDeAnimales.add(new Tortugas("Ariel", 20, 6, 19));
 
 		// muestra los animales que hay en el ArraList inicialmente
+		System.out.println("Estos son los animales que hay: ");
 		for (Animales animales : listDeAnimales) {
 			System.out.println(animales);
 		}
 
-		System.out.println();
-
-		// listDeAnimales.Observar();  no se ejecuta...
+		// listDeAnimales.Observar(); no se ejecuta...
 
 		// Ejecucion del metodo Observar();
-		 for (int i = 0; i < listDeAnimales.size(); i++) {
+		for (int i = 0; i < listDeAnimales.size(); i++) {
 			int numeroAleatorio = (int) (Math.random() * 100);
 			if (numeroAleatorio < 50) {
 				listDeAnimales.remove(i);
 			}
 		}
-		 
-		 System.out.println();
-		 
-			// Muestra los animales que sobrevivieron en el ArrayList mediante Iterator
-			Iterator<Animales> it = listDeAnimales.iterator();
-			while (it.hasNext()) {
-				System.out.println(it.next());
-			}
+
+		System.out.println();
+		System.out.println("Y estos los animales que quedan despues de haber pasado por la Caja Schrodinger:");
+		// Muestra los animales que sobrevivieron en el ArrayList mediante Iterator
+		Iterator<Animales> it = listDeAnimales.iterator();
+		while (it.hasNext()) {
+			System.out.println(it.next());
+		}
 	}
 }
